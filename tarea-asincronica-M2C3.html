@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>TAREA ASINCRONICA MODULO 2 CLASE 3</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron mt-3">
+            <h1 class="text-center">CALCULAR IVA DE UN PRODUCTO</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="precio">Monto Neto</label>
+                        <input 
+                        id="precio" 
+                        name="precio" 
+                        type="number" 
+                        class="form-control" 
+                        placeholder="ingrese valor aqui">
+                        <!-- <input placeholder=" inserte valor aqui" type="number" id="precio" name="precio" onchange="changeResult()"> -->
+                        <button class="btn btn-block btn-primary mt-3" onclick="calcularIva();">
+                            calcular
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p id="total"></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function calcularIva() {
+            const iva = 0.19;
+            let precio = document.getElementById('precio').value;
+            let valor = parseInt(precio, 10);
+            let res = valor * iva
+            resultado = res + valor;
+            let element = document.getElementById('total');
+            // element.innerHTML = `NETO: ${precio} <br>IVA: ${res} <br> TOTAL: ${resultado}`;
+            element.innerHTML = "NETO:" + precio + "<br>" + "IVA: " + res + "<br>" + "TOTAL: " + resultado;
+        }
+
+        // function changeResult(){
+        //     calcularIva()
+        // }
+    </script>
+</body>
+
+</html>
